@@ -6,14 +6,12 @@ To use this project, follow these steps:
 2. Install requirements with `pip install -r requirements.txt`
 3. Test locally with `./manage.py runserver`
 
-An example URL: `http://localhost:8000/slack/puppies`
+An example URL: `http://localhost:8000/slack/?text=table_name`
 
-## Deployment to Heroku
+This is set up to be a slack slash command.
+See https://api.slack.com/slash-commands.
 
-    $ heroku create
-    $ git push heroku master
-
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
+TODO(dan): Token authentication.
 
 ## Further Reading
 

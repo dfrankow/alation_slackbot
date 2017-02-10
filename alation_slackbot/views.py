@@ -3,8 +3,8 @@ from alation_slackbot.get_table_from_alation_api import get_table_data
 import logging
 import os
 
-def slack(request, query=None):
-    if not query:
+def slack(request, text=None):
+    if not text:
         if request.method == 'GET':
             query = request.GET.get('text', '')
         elif request.method == 'POST':
@@ -12,8 +12,8 @@ def slack(request, query=None):
             # https://api.slack.com/slash-commands
             query = request.POST.get('text', '')
 
-    logging.info("query %s" % query)
-    print "query '%s'" % query
+    logging.info("text %s" % text)
+    print "text '%s'" % text
     result_data = get_table_data(query)
     return HttpResponse("Link: %s\n%s\nDescription: %s" % (
             "%s/%s" % (os.environ.get('ALATION_BASE_URL'),
